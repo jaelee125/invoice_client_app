@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import Product from './Product';
+import InvoiceClientActions from '../actions/InvoiceClientActions';
 
 export default class ProductList extends Component {
   render() {
@@ -10,11 +10,15 @@ export default class ProductList extends Component {
         <ul>
         {this.props.products.map(product =>
           <li key={product.name}>
-            {product.name} ${product.price}
-            <button>+</button>
+            {product.name} {product.price}
+            <button onClick={this.addProduct.bind(this,product)}>+</button>
           </li>)}
         </ul>
       </div>
     );
+  }
+
+  addProduct(product) {
+    InvoiceClientActions.addProduct(product);
   }
 }

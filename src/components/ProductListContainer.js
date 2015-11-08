@@ -18,11 +18,9 @@ export default class ProductListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: ProductListStore.getProduct()
+      products: ProductListStore.getProducts()
     };
-  }
 
-  componentDidMount() {
     ProductListStore.addChangeListener(this.onChange.bind(this));
   }
 
@@ -32,7 +30,7 @@ export default class ProductListContainer extends Component {
 
   onChange() {
     this.setState({
-      products: ProductListStore.getProduct()
+      products: ProductListStore.getProducts()
     });
   }
 }

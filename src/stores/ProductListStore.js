@@ -1,24 +1,20 @@
+'use strict'
+
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import {EventEmitter} from 'events';
 import InvoiceClientConstants from '../constants/InvoiceClientConstants';
 import _ from 'underscore';
-import ProductAPI from '../utils/ProductAPI';
 
-var allProducts = {};
-var products = {};
+var products = [];
+var allProducts = [];
 
 function loadProductData(data) {
   allProducts = data;
   products = data;
 }
 
-function sortByProductName(product1, product2) {
-  if(product1.name < product2.name) return -1;
-  if(product1.name > product2.name) return 1;
-  return 0;
-}
-
 function searchForProduct(query){
+  saveSession("searchInput", query);
   var queryResult = [];
 
   allProducts.map(product => {
@@ -30,10 +26,14 @@ function searchForProduct(query){
   products = queryResult;
 }
 
+function saveSession(key, value) {
+  sessionStorage.setItem(key, value);
+}
+
 var ProductListStore = _.extend({}, EventEmitter.prototype,{
 
-  getProduct() {
-    return products.sort(sortByProductName);
+  getProducts() {
+    return products;
   },
 
   emitChange() {

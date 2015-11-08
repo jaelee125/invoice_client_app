@@ -1,5 +1,5 @@
 module.exports = {
-  // Load Product Data into Local Storage
+
   init: function() {
     localStorage.clear();
     localStorage.setItem('product', JSON.stringify([

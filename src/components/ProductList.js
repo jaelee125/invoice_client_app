@@ -6,12 +6,13 @@ import InvoiceClientActions from '../actions/InvoiceClientActions';
 export default class ProductList extends Component {
   render() {
     return (
-      <div>
-        <ul>
+      <div className="product-list">
+        <ul className="list-group">
         {this.props.products.map(product =>
-          <li key={product.name}>
-            {product.name} {product.price}
-            <button onClick={this.addProduct.bind(this,product)}>+</button>
+          <li className="list-group-item" key={product.name}>
+            <div className="product-list-element">{product.name}</div>
+            <div className="product-list-element">${product.price}</div>
+            <div className="product-list-element"><button className="btn btn-default" onClick={this.addProduct.bind(this,product)}>Add Product</button></div>
           </li>)}
         </ul>
       </div>

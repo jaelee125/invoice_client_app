@@ -10,6 +10,10 @@ export default class ProductListContainer extends Component {
     return (
       <div>
         <Search></Search>
+        <li className="list-group-item">
+          <div className="product-list-element">Product Name</div>
+          <div className="product-list-element">Price</div>
+        </li>
         <ProductList products={this.state.products}></ProductList>
       </div>
     );

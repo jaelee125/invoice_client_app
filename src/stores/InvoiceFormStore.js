@@ -37,12 +37,13 @@ function updateProduct(product, quantity, price) {
     }
   }
 
-  saveSession("selectedProducts", JSON.stringify(selectedProducts));;
+  saveSession("selectedProducts", JSON.stringify(selectedProducts));
 }
 
 
 function removeProduct(productToRemove) {
   selectedProducts = selectedProducts.filter(function (product) {return product.name != productToRemove.name});
+  saveSession("selectedProducts", JSON.stringify(selectedProducts));
 }
 
 function clearForm() {

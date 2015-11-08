@@ -6,12 +6,12 @@ import InvoiceClientActions from '../actions/InvoiceClientActions';
 export default class Product extends Component {
   render() {
     return (
-      <li>
-        {this.props.product.name}
-        <input type="text" ref="quantity" onBlur={this.update.bind(this)}/>
-        <input type="text" ref="price" onBlur={this.update.bind(this)}/>
-        {this.props.product.totalPrice}
-        <button onClick={this.removeProduct.bind(this)}>X</button>
+      <li className="list-group-item">
+        <div className="selected-product">{this.props.product.name}</div>
+        <div className="selected-product"><input type="number" min="1" ref="quantity" onBlur={this.update.bind(this)}/></div>
+        <div className="selected-product"><input type="number" ref="price" onBlur={this.update.bind(this)}/></div>
+        <div className="selected-product">${this.props.product.totalPrice.toFixed(2)}</div>
+        <div className="selected-product"><button className="btn btn-default" onClick={this.removeProduct.bind(this)}>Remove Product</button></div>
       </li>
     );
   }

@@ -11,7 +11,7 @@ import InvoiceFormContainer from './components/InvoiceFormContainer';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Header></Header>
         <ProductListContainer></ProductListContainer>
         <InvoiceFormContainer></InvoiceFormContainer>

@@ -4,74 +4,88 @@ module.exports = {
     localStorage.clear();
     localStorage.setItem('product', JSON.stringify([
       {
-        id: 1,
-        name: 'Small Monitor',
-        price: 99.99,
+        name: 'Steam Controller',
+        price: 49.99,
         quantity: 1,
-        totalPrice: 99.99
+        totalPrice: 49.99
       },
       {
-        id: 2,
-        name: 'Medium Monitor',
-        price: 149.99,
-        quantity: 1,
-        totalPrice: 149.99
-      },
-      {
-        id: 3,
-        name: 'Large Monitor',
-        price: 199.99,
-        quantity: 1,
-        totalPrice: 199.99
-      },
-      {
-        id: 4,
-        name: 'Regular Monitor',
-        price: 149.99,
-        quantity: 1,
-        totalPrice: 149.99
-      },
-      {
-        id: 5,
-        name: 'Expensive Monitor',
+        name: 'Xbox One',
         price: 399.99,
         quantity: 1,
         totalPrice: 399.99
       },
       {
-        id: 6,
-        name: 'Small Laptop',
-        price: 499.99,
+        name: 'PlayStation 4',
+        price: 399.99,
         quantity: 1,
-        totalPrice: 499.99
+        totalPrice: 399.99
       },
       {
-        id: 7,
-        name: 'Large Laptop',
-        price: 599.99,
+        name: 'Kindle',
+        price: 179.97,
         quantity: 1,
-        totalPrice: 599.99
+        totalPrice: 179.97
       },
       {
-        id: 8,
-        name: 'Camera',
-        price: 299.99,
+        name: 'TP-LINK Router',
+        price: 257.95,
         quantity: 1,
-        totalPrice: 299.99
+        totalPrice: 179.97
       },
       {
-        id: 9,
+        name: 'Amazon Fire TV',
+        price: 99.99,
+        quantity: 1,
+        totalPrice: 99.99
+      },
+      {
+        name: 'Fitbit Charge HR',
+        price: 140.99,
+        quantity: 1,
+        totalPrice: 149.99
+      },
+      {
+        name: 'Samsung 580 250GB SSD',
+        price: 86.95,
+        quantity: 1,
+        totalPrice: 86.95
+      },
+      {
         name: 'Television',
         price: 249.99,
         quantity: 1,
         totalPrice: 249.99
       },
       {
-        id: 10,
-        name: 'Camcorder',
-        price: 349.99,
+        name: 'SanDisk Extreme 32gb microSDHC',
+        price: 18.49,
         quantity: 1,
-        totalPrice: 349.99
+        totalPrice: 18.49
+      },
+      {
+        name: 'Dell Inspiron Laptop',
+        price: 799.99,
+        quantity: 1,
+        totalPrice: 799.99
+      },
+      {
+        name: 'Lenovo Flex Laptop',
+        price: 729.99,
+        quantity: 1,
+        totalPrice: 729.99
+      },
+      {
+        name: 'Steam Link',
+        price: 49.99,
+        quantity: 1,
+        totalPrice: 49.99
+      },
+      {
+        name: 'Fire HD',
+        price: 229.99,
+        quantity: 1,
+        totalPrice: 229.99
       }
     ]));
   }

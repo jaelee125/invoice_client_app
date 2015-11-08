@@ -6,14 +6,14 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <div>
+        <div className="header">
           <h1>Invoice Client App</h1>
         </div>
         <nav>
-          <div>
-            <ul>
-              <li><a href="../public/index.html">Search</a></li>
-              <li><a href="#">Invoices</a></li>
+          <div className="navigation">
+            <ul className="nav nav-tabs nav-justified">
+              <li role="presentation" className="active"><a href="index.html">Create Invoice</a></li>
+              <li role="presentation"><a href="#">Search Invoice</a></li>
             </ul>
           </div>
         </nav>

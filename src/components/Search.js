@@ -7,8 +7,8 @@ import InvoiceFormStore from '../stores/InvoiceFormStore';
 export default class Search extends Component {
   render() {
     return (
-      <div>
-        <input type="search" ref="searchInput" placeholder="Enter a product to search" onChange={this.searchForProduct.bind(this)}></input>
+      <div className="input-group search">
+        <input type="search" ref="searchInput" className="form-control" placeholder="Enter a product to search" onChange={this.searchForProduct.bind(this)}></input>
       </div>
     );
   }

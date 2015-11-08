@@ -6,13 +6,17 @@ import InvoiceFormStore from '../stores/InvoiceFormStore';
 export default class Product extends Component {
   render() {
     return (
-      <div>
-        <label>Invoice Number</label>
-        <input type="text" ref="invoiceNumber" placeholder="Invoice Number" onBlur={this.saveValue.bind(this)}/>
-        <label>Name</label>
-        <input type="text" ref="name" placeholder="Your name..." onBlur={this.saveValue.bind(this)}/>
-        <label>Date</label>
-        <input type="text" ref="date" placeholder="Date..." onBlur={this.saveValue.bind(this)}/>
+      <div className="form-header">
+        <h3>Invoice Form</h3>
+        <div className="form-header-element">
+          Invoice Number: <input className="input-group" type="number" ref="invoiceNumber" placeholder="Invoice Number" onBlur={this.saveValue.bind(this)}/>
+        </div>
+        <div className="form-header-element">
+          Name: <input className="input-group" type="text" ref="name" placeholder="Name" onBlur={this.saveValue.bind(this)}/>
+        </div>
+        <div className="form-header-element">
+          Date: <input className="input-group" type="date" ref="date" onBlur={this.saveValue.bind(this)}/>
+        </div>
       </div>
     );
   }

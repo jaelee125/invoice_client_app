@@ -6,6 +6,9 @@ import InvoiceClientConstants from '../constants/InvoiceClientConstants';
 import _ from 'underscore';
 
 var selectedProducts = [];
+var tax = 0.00;
+var taxRate = 0.10;
+var invoiceTotalPrice = 0.00;
 
 function addProduct(product) {
   if(selectedProducts.length == 0){
@@ -31,8 +34,8 @@ function updateProduct(product, quantity, price) {
   for(var i = 0; i < selectedProducts.length; i++){
     if(selectedProducts[i].name == product.name) {
       product.quantity = quantity;
-      product.price = price;
-      product.totalPrice = quantity * price;
+      product.price = parseFloat(price).toFixed(2);
+      product.totalPrice = parseFloat(quantity * price).toFixed(2);
       selectedProducts[i] = product;
     }
   }
@@ -60,6 +63,30 @@ function saveSession(key, value) {
   sessionStorage.setItem(key, value);
 }
 
+function calculateInvoiceTotalPrice(){
+
+  if(selectedProducts.length != 0){
+    invoiceTotalPrice = 0.00;
+    selectedProducts.map(product => {
+      invoiceTotalPrice=invoiceTotalPrice + parseFloat(product.totalPrice)
+    });
+
+  } else {
+      invoiceTotalPrice = 0.00;
+  }
+
+  return invoiceTotalPrice;
+}
+
+function calculateInvoiceTax(){
+  tax = (invoiceTotalPrice * taxRate);
+  return tax;
+}
+
+function calculateInvoiceGrandTotal(){
+  return parseFloat(invoiceTotalPrice) + parseFloat(tax);
+}
+
 var InvoiceFormStore = _.extend({}, EventEmitter.prototype,{
 
   getSelectedProducts() {
@@ -80,6 +107,17 @@ var InvoiceFormStore = _.extend({}, EventEmitter.prototype,{
 
   saveValue(key, value) {
     saveSession(key, value);
+  },
+
+  calculateInvoiceTotalPrice(){
+    return calculateInvoiceTotalPrice();
+  },
+
+  calculateInvoiceTax(){
+    return calculateInvoiceTax();
+  },
+  calculateInvoiceGrandTotal(){
+    return calculateInvoiceGrandTotal();
   }
 
 });

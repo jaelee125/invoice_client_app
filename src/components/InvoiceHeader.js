@@ -7,15 +7,15 @@ export default class Product extends Component {
   render() {
     return (
       <div className="form-header">
-        <h3>Invoice Form</h3>
+        <h2>Invoice Form</h2>
         <div className="form-header-element">
-          Invoice Number: <input className="input-group" type="number" ref="invoiceNumber" placeholder="Invoice Number" onBlur={this.saveValue.bind(this)}/>
+          Invoice Number: <input className="input-group" type="number" ref="invoiceNumber" placeholder="Invoice Number" onBlur={this.saveValue.bind(this)} min="0" required/>
         </div>
         <div className="form-header-element">
-          Name: <input className="input-group" type="text" ref="name" placeholder="Name" onBlur={this.saveValue.bind(this)}/>
+          Name: <input className="input-group" type="text" ref="name" placeholder="Name" onBlur={this.saveValue.bind(this)} required/>
         </div>
         <div className="form-header-element">
-          Date: <input className="input-group" type="date" ref="date" onBlur={this.saveValue.bind(this)}/>
+          Date: <input className="input-group" type="date" ref="date" onBlur={this.saveValue.bind(this)} required/>
         </div>
       </div>
     );

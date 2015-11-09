@@ -5,15 +5,18 @@ import InvoiceFormStore from '../stores/InvoiceFormStore';
 import SelectedProducts from './SelectedProducts';
 import InvoiceHeader from './InvoiceHeader';
 import InvoiceClientActions from '../actions/InvoiceClientActions';
+import PriceSection from './PriceSection';
+import InvoiceFormAPI from '../utils/InvoiceFormAPI';
 
 export default class InvoiceFormContainer extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.submitForm.bind(this)}>
           <InvoiceHeader></InvoiceHeader>
           <SelectedProducts selectedProducts={this.state.selectedProducts}></SelectedProducts>
-          <button type="submit" onClick={this.createInvoice.bind(this)}>Create Invoice</button>
+          <PriceSection selectedProducts={this.state.selectedProducts}></PriceSection>
+          <div className="create-invoice"><button className="btn btn-default" type="submit">Create Invoice</button></div>
         </form>
       </div>
     );
@@ -22,7 +25,8 @@ export default class InvoiceFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedProducts: []
+      selectedProducts: [],
+      isInvoiceNumberValid: false
     };
   }
 
@@ -41,8 +45,9 @@ export default class InvoiceFormContainer extends Component {
     });
   }
 
-  createInvoice() {
-    console.log("Invoice Created");
+  submitForm() {
+    debugger;
+    InvoiceFormAPI.submitForm();
     InvoiceClientActions.clearForm();
     sessionStorage.clear();
   }

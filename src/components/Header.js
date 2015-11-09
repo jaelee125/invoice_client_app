@@ -13,7 +13,7 @@ export default class Header extends Component {
           <div className="navigation">
             <ul className="nav nav-tabs nav-justified">
               <li role="presentation" className="active"><a href="index.html">Create Invoice</a></li>
-              <li role="presentation"><a href="#">Search Invoice</a></li>
+              <li role="presentation"><a href="searchInvoice.html">Search Invoice</a></li>
             </ul>
           </div>
         </nav>

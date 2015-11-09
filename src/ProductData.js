@@ -31,7 +31,7 @@ module.exports = {
         name: 'TP-LINK Router',
         price: 257.95,
         quantity: 1,
-        totalPrice: 179.97
+        totalPrice: 257.95
       },
       {
         name: 'Amazon Fire TV',

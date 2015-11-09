@@ -8,9 +8,9 @@ export default class Product extends Component {
     return (
       <li className="list-group-item">
         <div className="selected-product">{this.props.product.name}</div>
-        <div className="selected-product"><input type="number" min="1" ref="quantity" onBlur={this.update.bind(this)}/></div>
-        <div className="selected-product"><input type="number" ref="price" onBlur={this.update.bind(this)}/></div>
-        <div className="selected-product">${this.props.product.totalPrice.toFixed(2)}</div>
+        <div className="selected-product"><input type="number" min="1" ref="quantity" onBlur={this.update.bind(this)} required/></div>
+        <div className="selected-product"><input type="number" min="0.00" step="0.01" ref="price" onBlur={this.update.bind(this)} required/></div>
+        <div className="selected-product">${parseFloat(this.props.product.totalPrice).toFixed(2)}</div>
         <div className="selected-product"><button className="btn btn-default" onClick={this.removeProduct.bind(this)}>Remove Product</button></div>
       </li>
     );
@@ -23,7 +23,7 @@ export default class Product extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.refs.quantity.value = nextProps.product.quantity;
-    this.refs.price.value = nextProps.product.price;
+    this.refs.price.value = parseFloat(nextProps.product.price).toFixed(2);
   }
 
   update() {

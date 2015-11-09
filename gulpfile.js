@@ -7,7 +7,7 @@ var babelify = require('babelify');
 
 gulp.task('default', function() {
 	var bundler = watchify(browserify({
-		entries: ['./src/app.js'],
+		entries: ['./src/CreateInvoiceApp.js'],
 		transform: [["babelify", { "presets": ["es2015", "react"] }]],
 		extensions: ['.js'],
 		debug: true,
@@ -21,7 +21,7 @@ gulp.task('default', function() {
 		return bundler
 			.bundle()
 			.on('error', gutil.log.bind(gutil, 'Browserify Error'))
-			.pipe(source('bundle.js'))
+			.pipe(source('index.js'))
 			.pipe(gulp.dest('./public'));
 	};
 	build()

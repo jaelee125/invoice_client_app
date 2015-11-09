@@ -75,15 +75,18 @@ function calculateInvoiceTotalPrice(){
       invoiceTotalPrice = 0.00;
   }
 
+  saveSession("totalPrice", invoiceTotalPrice);
   return invoiceTotalPrice;
 }
 
 function calculateInvoiceTax(){
   tax = (invoiceTotalPrice * taxRate);
+  saveSession("tax", tax);
   return tax;
 }
 
 function calculateInvoiceGrandTotal(){
+  saveSession("grandTotal", parseFloat(invoiceTotalPrice) + parseFloat(tax));
   return parseFloat(invoiceTotalPrice) + parseFloat(tax);
 }
 

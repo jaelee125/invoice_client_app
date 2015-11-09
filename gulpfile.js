@@ -7,7 +7,7 @@ var babelify = require('babelify');
 
 gulp.task('default', function() {
 	var bundler = watchify(browserify({
-		entries: ['./src/CreateInvoiceApp.js'],
+		entries: ['./src/App.js'],
 		transform: [["babelify", { "presets": ["es2015", "react"] }]],
 		extensions: ['.js'],
 		debug: true,

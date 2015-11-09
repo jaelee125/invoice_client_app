@@ -46,9 +46,9 @@ export default class InvoiceFormContainer extends Component {
   }
 
   submitForm() {
-    debugger;
     InvoiceFormAPI.submitForm();
     InvoiceClientActions.clearForm();
     sessionStorage.clear();
+    alert("Invoice has been create");
   }
 }

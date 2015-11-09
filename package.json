@@ -5,6 +5,9 @@
   "description": "A simple invoice client app",
   "main": "index.html",
   "license": "ISC",
+  "scripts" : {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "axios": "^0.7.0",
     "events": "^1.1.0",
